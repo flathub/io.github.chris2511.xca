@@ -35,3 +35,10 @@ modules:
         path: 0002-desktop-icon-fix.patch
     post-install:
       - install -Dm644 io.github.chris2511.xca.metainfo.xml /app/share/metainfo/io.github.chris2511.xca.metainfo.xml
+      - install -Dm644 /app/share/applications/xca.desktop /app/share/applications/io.github.chris2511.xca.metainfo.desktop
+      - |
+        for SZ in 16 32 64 128 512; do
+        if [ -f img/xca-icons.iconset/icon_${SZ}x${SZ}.png ]; then
+        install -Dm0644 /app/share/icons/hicolor/${SZ}x${SZ}/apps/xca.png  /app/share/icons/hicolor/${SZ}x${SZ}/apps/io.github.chris2511.xca.png 
+      - install -Dm644 /app/share/mime/packages/xca.xml /app/share/mime/packages/io.github.chris2511.xca.xml
+
