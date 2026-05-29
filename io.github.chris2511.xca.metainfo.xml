@@ -31,6 +31,16 @@
     </description>
     <developer_name>Christian Hohnstädt, Kerstin Steinhauff et al.</developer_name>
     <releases>
+        <release date="2025-03-28" version="2.9.0">
+            <description>
+                <p>The latest release is <em>2.9.0</em></p>
+                <ul>
+                    <li>Improve remote database support on macOS</li>
+                    <li>Do not revoke renewed certificate with same serial</li>
+                    <li>Fix default template finding on Linux</li>
+                </ul>
+            </description>
+        </release>
         <release date="2023-09-24" version="2.5.0">
             <description>
                 <p>The latest release is <em>2.5.0</em></p>

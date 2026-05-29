@@ -1,6 +1,6 @@
 app-id: io.github.chris2511.xca
 runtime: org.kde.Platform
-runtime-version: '6.6'
+runtime-version: '6.10'
 sdk: org.kde.Sdk
 finish-args:
   # X11 + XShm access
@@ -23,7 +23,8 @@ cleanup:
   - '*.la'
   - '*.a'
 command: xca
-rename-desktop-file: "xca.desktop"
+rename-desktop-file: "de.hohnstaedt.xca.desktop"
+rename-icon: de.hohnstaedt.xca
 modules:
   - python3-sphinx.json
   - name: xca
@@ -33,21 +34,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/chris2511/xca.git
-        tag: RELEASE.2.5.0
-        commit: 4ddb086128665268082dc3d328bfcca889648dd4
+        tag: RELEASE.2.9.0
+        commit: a2baa17f7995746b4706708e1101f02528d55399
         disable-fsckobjects: true
       - type: file
         path: "io.github.chris2511.xca.metainfo.xml"
       # 0001 not needed anymore?
       #- type: patch
       #  path: 0001-unset-werror.patch
-      - type: patch
-        path: 0002-desktop-icon-fix.patch
     post-install:
       - install -Dm644 io.github.chris2511.xca.metainfo.xml /app/share/metainfo/io.github.chris2511.xca.metainfo.xml
-      - install -D -m 0644 /app/share/icons/hicolor/16x16/apps/xca.png /app/share/icons/hicolor/16x16/apps/io.github.chris2511.xca.png
-      - install -D -m 0644 /app/share/icons/hicolor/32x32/apps/xca.png /app/share/icons/hicolor/32x32/apps/io.github.chris2511.xca.png
-      - install -D -m 0644 /app/share/icons/hicolor/48x48/apps/xca.png /app/share/icons/hicolor/48x48/apps/io.github.chris2511.xca.png
-      - install -D -m 0644 /app/share/icons/hicolor/64x64/apps/xca.png /app/share/icons/hicolor/64x64/apps/io.github.chris2511.xca.png
-      - install -D -m 0644 /app/share/icons/hicolor/64x64/apps/xca.png /app/share/icons/hicolor/scalable/apps/io.github.chris2511.xca.png
-      - install -D -m 0644 /app/share/icons/hicolor/64x64/apps/xca.png /app/share/icons/hicolor/symbolic/apps/io.github.chris2511.xca-symbolic.png
